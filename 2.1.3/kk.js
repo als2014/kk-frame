@@ -36,4 +36,30 @@ let kk = {
         }
     },
 
+    /**
+     * 修改节点上Sprite组件的图片,如果没有Sprite组件则自动添加
+     * @param {cc.Node} node 
+     * @param {cc.SpriteFrame} spriteFrame 
+     */
+    setNodeImg: function (node, spriteFrame) {
+        let sp = node.getComponent(cc.Sprite);
+        if (!sp) {
+            sp = node.addComponent(cc.Sprite);
+        }
+        sp.spriteFrame = spriteFrame;
+    },
+
+    /**
+     * 修改节点上Label组件的文字,如果没有Label组件则自动添加
+     * @param {cc.Node} node 
+     * @param {string} string 
+     */
+    setNodeLab: function (node, string) {
+        let lab = node.getComponent(cc.Label);
+        if (!lab) {
+            lab = node.addComponent(cc.Label);
+        }
+        lab.string = string;
+    }
+
 }
