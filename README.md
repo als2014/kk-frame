@@ -56,4 +56,12 @@ lab.string = 'kuokuo';
 kk.setNodeLab(this.node, 'kuokuo');
 ```
 
-## 事件相关
+## 工具相关
+- 随机整数，包括最小值与最大值
+```
+let n = kk.randomNumber(1, 5);
+```
+- 随机小数
+```
+let n = randomNumber(1, 5);
+```

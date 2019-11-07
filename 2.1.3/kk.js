@@ -37,7 +37,7 @@ let kk = {
     },
 
     /**
-     * 修改节点上Sprite组件的图片,如果没有Sprite组件则自动添加
+     * 修改节点上Sprite组件的图片,如果没有Sprite组件则添加
      * @param {cc.Node} node 
      * @param {cc.SpriteFrame} spriteFrame 
      */
@@ -50,7 +50,7 @@ let kk = {
     },
 
     /**
-     * 修改节点上Label组件的文字,如果没有Label组件则自动添加
+     * 修改节点上Label组件的文字,如果没有Label组件则添加
      * @param {cc.Node} node 
      * @param {string} string 
      */
@@ -60,6 +60,24 @@ let kk = {
             lab = node.addComponent(cc.Label);
         }
         lab.string = string;
-    }
+    },
+
+    /**
+     * 随机整数，包括 min 与 max
+     * @param {number} min 
+     * @param {number} max 
+     */
+    randomInt: function (min, max) {
+        return Math.floor(min + Math.random() * (max - min + 1));
+    },
+
+    /**
+     * 在 min 与 max 之间随机小数
+     * @param {number} min 
+     * @param {number} max 
+     */
+    randomNumber: function (min, max) {
+        return min + Math.random() * (max - min);
+    } 
 
 }
