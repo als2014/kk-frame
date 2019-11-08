@@ -12,36 +12,36 @@ KUOKUO独立维护的一款微型CocosCreator开发框架。对API的扩充与�
 ## 节点相关
 - 显示子节点
 ```
-// 将 root 节点的下标为 0，2，5 的子节点显示
+// 将root节点的下标为0，2，5的子节点显示
 kk.showChildren(this.root, [0, 2, 5]);
 
-// 将 root 节点的子节点全部显示
+// 将root节点的子节点全部显示
 kk.showChildren(this.root);
 ```
 - 隐藏子节点
 ```
-// 将 root 节点的下标为 0，2，5 的子节点隐藏
+// 将root节点的下标为0，2，5的子节点隐藏
 kk.hideChildren(this.root, [0, 2, 5]);
 
-// 将 root 节点的子节点全部隐藏
+// 将root节点的子节点全部隐藏
 kk.hideChildren(this.root);
 ```
 
 ## 组件相关
 - 图片设置
 ```
-// 为 this.node 上的精灵组件设置图片
+// 为this.node上的精灵组件设置图片
 kk.setNodeImg(this.node, img);
 ```
 - 网络加载图片
 ```
-// 根据远程图片地址 url 为 this.node 上的精灵组件设置图片
+// 根据远程图片地址url为this.node上的精灵组件设置图片
 let url = 'http://cdn.kuokuo666.com/wx-kuokuo.jpg';
 kk.setNodeImgByUrl(this.node, url);
 ```
 - 文本设置
 ```
-// 为 this.node 上的文本组件设置文本
+// 为this.node上的文本组件设置文本
 kk.setNodeLab(this.node, 'kuokuo');
 ```
 
@@ -53,6 +53,6 @@ let n = kk.randomNumber(1, 5);
 ```
 - 在给定范围内随机小数
 ```
-// 在 1-5 的范围内随机小数
+// 在1-5的范围内随机小数
 let n = randomNumber(1, 5);
 ```
