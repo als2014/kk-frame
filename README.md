@@ -41,8 +41,24 @@ kk.hideChildren(this.root);
 let sprite = this.node.getComponent(cc.Sprite);
 sprite.spriteFrame = img;
 
-// kk框架,如果节点上没有Sprite组件则自动添加
+// kk框架
 kk.setNodeImg(this.node, img);
+```
+- 网络加载图片
+```
+// 原版
+let url = 'http://cdn.kuokuo666.com/wx-kuokuo.jpg';
+cc.loader.load({
+    url: url,
+    type: 'png'
+}, (err, tex) => {
+    this.node.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(tex);
+})
+
+// kk框架
+let url = 'http://cdn.kuokuo666.com/wx-kuokuo.jpg';
+// 传入带有精灵组件的节点以及 url
+kk.setNodeImgByUrl(this.node, url);
 ```
 - 设置Label组件文本
 ```
@@ -50,7 +66,7 @@ kk.setNodeImg(this.node, img);
 let lab = node.getComponent(cc.Label);
 lab.string = 'kuokuo';
 
-// kk框架,如果节点上没有Label组件则自动添加
+// kk框架
 kk.setNodeLab(this.node, 'kuokuo');
 ```
 
