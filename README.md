@@ -75,7 +75,7 @@ kk.request({
     }
 })
 ```
-- 网页链接中参数获取
+- 链接中参数获取
 
 > 本地测试，用http://localhost:7456/?key=kuokuo打开预览，value为'kuokuo'
 ```
