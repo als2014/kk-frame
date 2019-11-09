@@ -45,6 +45,43 @@ kk.setNodeImgByUrl(this.node, url);
 kk.setNodeLab(this.node, 'kuokuo');
 ```
 
+## 网络请求
+- http的get与post封装
+```
+// GET示例
+let url = 'http://api.help.bj.cn/apis/youjia';
+kk.request({
+    url: url,
+    type: 'GET',
+    async: true,
+    data: {},
+    success: (data) => {
+        console.log(data);
+        console.log(JSON.parse(data));
+    }
+})
+
+// POST示例
+let url = 'https://api.apiopen.top/EmailSearch';
+kk.request({
+    url: url,
+    type: 'POST',
+    async: true,
+    data: {
+        number: 100
+    },
+    success: (data) => {
+        console.log(data);
+        console.log(JSON.parse(data));
+    }
+})
+```
+- 网页链接中参数获取
+```
+// 本地测试，用http://localhost:7456/?key=kuokuo打开预览
+let value = kk.getQuery('key'); // kuokuo
+```
+
 ## 工具相关
 - 随机整数，包括最小值与最大值
 ```

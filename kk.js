@@ -84,6 +84,54 @@ let kk = {
      */
     randomNumber (min, max) {
         return min + Math.random() * (max - min);
-    } 
+    },
+
+    /**
+     * 获取网址传入指定 id 的内容
+     * @param {string} id 
+     */
+    getQuery (id) {
+        let reg = new RegExp("(^|&)"+ id +"=([^&]*)(&|$)");
+        let r = window.location.search.substr(1).match(reg);
+        if(r != null) {
+            return unescape(r[2]); 
+        }
+        return null;
+    },
+
+    /**
+     * 发送 http 请求
+     * options 包括 url，type，async，data，success 参数，详见 GitHub 文档
+     * @param {object} options 
+     */
+    request (options) {
+        let xhr = null;
+        let params = formsParams(options.data);
+        if(window.XMLHttpRequest){
+            xhr = new XMLHttpRequest()
+        } else {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        if(options.type == "GET"){
+            xhr.open(options.type, options.url + "?" + params, options.async);
+            xhr.send(null)
+        } else if(options.type == "POST"){
+            xhr.open(options.type, options.url, options.async);
+            xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+            xhr.send(params);
+        }
+        xhr.onreadystatechange = () => {
+            if(xhr.readyState == 4 && xhr.status == 200){
+                options.success(xhr.responseText);
+            }
+        }
+        function formsParams (data) {
+            let arr = [];
+            for (let prop in data) {
+                arr.push(prop + "=" + data[prop]);
+            }
+            return arr.join("&");
+        }
+    },
 
 }
