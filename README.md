@@ -77,7 +77,7 @@ kk.request({
 ```
 - 链接中参数获取
 
-> 本地测试，用http://localhost:7456/?key=kuokuo打开预览，value为'kuokuo'
+> 本地测试，用localhost:7456/?key=kuokuo打开预览，value为'kuokuo'
 ```
 let value = kk.getQuery('key');
 ```
