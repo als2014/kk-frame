@@ -1,5 +1,21 @@
 let kk = {
     
+    /** 是否调试模式，私有，请通过 setDebugMode() 设置 */
+    _isDebug: true,
+
+    /** 设置是否为开发模式，决定是否打印 kk.log() 等方法 */
+    setDebugMode (bool) {
+        this._isDebug = bool;
+    },
+
+    /** 打印封装,调试模式时打印,在游戏开始时调用 kk.setDebugMode(false) 来跳过打印 */
+    log () {
+        if (!this._isDebug) return;
+        for(let msg in arguments) {
+            console.log(arguments[msg]);
+        }
+    },
+
     /**
      * 为给定下标子节点的 active 置 true,注意下标从 0 开始.
      * 下标数组留空即为全部置 true.
@@ -114,7 +130,7 @@ let kk = {
         }
         if(options.type == "GET"){
             xhr.open(options.type, options.url + "?" + params, options.async);
-            xhr.send(null)
+            xhr.send(null);
         } else if(options.type == "POST"){
             xhr.open(options.type, options.url, options.async);
             xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");

@@ -9,6 +9,23 @@ KUOKUO独立维护的一款微型CocosCreator开发框架。对API的扩充与�
 - 在脚本中使用kk
 
 # 使用文档
+## 调试打印
+- 设置开发模式
+
+> 设置开发模式，在游戏开始时调用，决定开发中的打印信息是否显示等。
+```
+kk.setDebugMode(true);
+kk.setDebugMode(false);
+```
+
+- 控制台打印
+
+> 对console.log的封装，设置开发模式为false时跳过打印。
+```
+let name = 'KUOKUO';
+kk.log('My name is ' + name);
+```
+
 ## 节点相关
 - 显示子节点
 
